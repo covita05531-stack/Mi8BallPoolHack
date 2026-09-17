@@ -1,0 +1,7 @@
+Package: com.tuusuario.poollines
+Name: 8BallPoolLines
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Hack de lineas largas para 8 Ball Pool
+Author: TuNombre

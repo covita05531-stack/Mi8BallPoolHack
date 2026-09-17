@@ -1,0 +1,21 @@
+name: Compilar Tweak
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v4
+      - name: Instalar Theos en la nube
+        run: |
+          bash -c "$(curl -fsSL https://githubusercontent.com)"
+      - name: Fabricar Tweak (.dylib)
+        run: |
+          export THEOS=~/theos
+          make package
+      - name: Subir archivo final listo
+        uses: actions/upload-artifact@v4
+        with:
+          name: mi-hack-dylib
+          path: .theos/obj/*.dylib
